@@ -31,7 +31,7 @@ class Register
 
 		add_action( 'widgets_init', [ __CLASS__, 'unregister_all' ], 11 );
 
-		add_action( 'widgets_init', [ __CLASS__, 'do_registration' ], 12 );
+		add_action( 'widgets_init', [ __CLASS__, 'register_widgets' ], 12 );
 	}
 
 	/**
@@ -48,13 +48,13 @@ class Register
 	/**
 	 * Register required widgets.
 	 */
-	public static function do_registration() {
+	public static function register_widgets() {
 		foreach ( self::$_registered_widgets['leean'] as $widget ) {
-			self::register( __NAMESPACE__ . '\\Widgets\\' . $widget );
+			self::register_widget( __NAMESPACE__ . '\\Widgets\\' . $widget );
 		}
 
 		foreach ( self::$_registered_widgets['custom'] as $widget ) {
-			self::register( $widget );
+			self::register_widget( $widget );
 		}
 	}
 
@@ -63,7 +63,7 @@ class Register
 	 *
 	 * @param string $widget_class Full class name (including namespace) of the widget.
 	 */
-	private static function register( $widget_class ) {
+	private static function register_widget( $widget_class ) {
 		register_widget( $widget_class );
 
 		if ( method_exists( $widget_class, 'post_registration' ) ) {
