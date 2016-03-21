@@ -50,7 +50,7 @@ class Register
 	 */
 	public static function register_widgets() {
 		foreach ( self::$_registered_widgets['leean'] as $widget ) {
-			self::register_widget( __NAMESPACE__ . '\\Widgets\\' . $widget );
+			self::register_widget( __NAMESPACE__ . '\\Collection\\' . $widget );
 		}
 
 		foreach ( self::$_registered_widgets['custom'] as $widget ) {

@@ -1,11 +1,11 @@
-<?php namespace Leean\Widgets\Widgets;
+<?php namespace Leean\Widgets\Collection;
 
 use Leean\Widgets\Models\AbstractWidget;
 
 /**
  * Class LeeanPreview.
  *
- * @package Leean\Widgets\Widgets
+ * @package Leean\Widgets\Collection
  */
 class LeeanPreview extends AbstractWidget
 {
