@@ -20,21 +20,21 @@ class LeeanPreview extends AbstractWidget
 	 * POst registration.
 	 */
 	public static function post_registration() {
-		if( function_exists('acf_add_local_field_group') ):
+		if ( function_exists( 'acf_add_local_field_group' ) ) :
 
-			acf_add_local_field_group(array (
+			acf_add_local_field_group( array(
 				'key' => 'group_56ef50a64f75f',
 				'title' => 'LeeanPreview',
-				'fields' => array (
-					array (
+				'fields' => array(
+					array(
 						'key' => 'field_56ef50b46191d',
-						'label' => 'Previews',
-						'name' => 'previews',
+						'label' => 'Items',
+						'name' => 'items',
 						'type' => 'repeater',
 						'instructions' => '',
 						'required' => 1,
 						'conditional_logic' => 0,
-						'wrapper' => array (
+						'wrapper' => array(
 							'width' => '',
 							'class' => '',
 							'id' => '',
@@ -44,8 +44,8 @@ class LeeanPreview extends AbstractWidget
 						'max' => '',
 						'layout' => 'block',
 						'button_label' => 'Add Item',
-						'sub_fields' => array (
-							array (
+						'sub_fields' => array(
+							array(
 								'key' => 'field_56ef50ea6191e',
 								'label' => 'Title',
 								'name' => 'title',
@@ -53,7 +53,7 @@ class LeeanPreview extends AbstractWidget
 								'instructions' => '',
 								'required' => 0,
 								'conditional_logic' => 0,
-								'wrapper' => array (
+								'wrapper' => array(
 									'width' => '',
 									'class' => '',
 									'id' => '',
@@ -66,7 +66,7 @@ class LeeanPreview extends AbstractWidget
 								'readonly' => 0,
 								'disabled' => 0,
 							),
-							array (
+							array(
 								'key' => 'field_56ef514b6191f',
 								'label' => 'Description',
 								'name' => 'description',
@@ -74,7 +74,7 @@ class LeeanPreview extends AbstractWidget
 								'instructions' => '',
 								'required' => 0,
 								'conditional_logic' => 0,
-								'wrapper' => array (
+								'wrapper' => array(
 									'width' => '',
 									'class' => '',
 									'id' => '',
@@ -87,7 +87,7 @@ class LeeanPreview extends AbstractWidget
 								'readonly' => 0,
 								'disabled' => 0,
 							),
-							array (
+							array(
 								'key' => 'field_56ef518061921',
 								'label' => 'Button Text',
 								'name' => 'button_text',
@@ -95,7 +95,7 @@ class LeeanPreview extends AbstractWidget
 								'instructions' => '',
 								'required' => 0,
 								'conditional_logic' => 0,
-								'wrapper' => array (
+								'wrapper' => array(
 									'width' => '',
 									'class' => '',
 									'id' => '',
@@ -108,7 +108,7 @@ class LeeanPreview extends AbstractWidget
 								'readonly' => 0,
 								'disabled' => 0,
 							),
-							array (
+							array(
 								'key' => 'field_56ef517661920',
 								'label' => 'Link',
 								'name' => 'link',
@@ -116,7 +116,7 @@ class LeeanPreview extends AbstractWidget
 								'instructions' => '',
 								'required' => 0,
 								'conditional_logic' => 0,
-								'wrapper' => array (
+								'wrapper' => array(
 									'width' => '',
 									'class' => '',
 									'id' => '',
@@ -124,15 +124,15 @@ class LeeanPreview extends AbstractWidget
 								'default_value' => '',
 								'placeholder' => '',
 							),
-							array (
+							array(
 								'key' => 'field_56ef51a161922',
 								'label' => 'Open in New Window',
-								'name' => 'open_in_new_window',
+								'name' => 'new_window',
 								'type' => 'true_false',
 								'instructions' => '',
 								'required' => 0,
 								'conditional_logic' => 0,
-								'wrapper' => array (
+								'wrapper' => array(
 									'width' => '',
 									'class' => '',
 									'id' => '',
@@ -143,9 +143,9 @@ class LeeanPreview extends AbstractWidget
 						),
 					),
 				),
-				'location' => array (
-					array (
-						array (
+				'location' => array(
+					array(
+						array(
 							'param' => 'widget',
 							'operator' => '==',
 							'value' => 'leean-preview',
@@ -160,7 +160,7 @@ class LeeanPreview extends AbstractWidget
 				'hide_on_screen' => '',
 				'active' => 1,
 				'description' => '',
-			));
+			) );
 
 		endif;
 	}
