@@ -1,13 +1,13 @@
 <?php namespace Leean\Widgets\Models;
 
-use Leean\Acf\All;
+use Leean\Acf;
 
 /**
  * Class AbstractWidget.
  *
  * @package Leean\Widgets\Models
  */
-class AbstractWidget extends \WP_Widget
+abstract class AbstractWidget extends \WP_Widget
 {
 	/**
 	 * The slug.
@@ -56,7 +56,7 @@ class AbstractWidget extends \WP_Widget
 
 		return array_merge(
 			[ 'title' => $settings['title'] ],
-			All::get_widget_fields( $this->id )
+			Acf::get_widget_field( $this->id )
 		);
 	}
 
