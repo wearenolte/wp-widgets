@@ -148,7 +148,7 @@ class LeeanPreview extends AbstractWidget
 						array (
 							'param' => 'widget',
 							'operator' => '==',
-							'value' => 'leeanpreview',
+							'value' => 'leean-preview',
 						),
 					),
 				),

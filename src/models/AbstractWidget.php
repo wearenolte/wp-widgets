@@ -24,7 +24,13 @@ class AbstractWidget extends \WP_Widget
 	 * @param bool   $slug		  Widget slug (use class name if not supplied).
 	 */
 	public function __construct( $title, $description, $slug = false ) {
-		$this->_slug = $slug ? $slug : strtolower( ( new \ReflectionClass( $this ) )->getShortName() );
+		if ( $slug ) {
+			$this->_slug = $slug;
+		} else {
+			$child_class = ( new \ReflectionClass( $this ) )->getShortName();
+			$child_class_parts = preg_split( '/(?=[A-Z])/', $child_class );
+			$this->_slug = trim( strtolower( implode( '-', $child_class_parts ) ), '-' );
+		}
 
 		parent::__construct( $this->_slug, $title, [
 			'description' => $description,
@@ -42,7 +48,7 @@ class AbstractWidget extends \WP_Widget
 
 	/**
 	 * Get the widget's data
-	 * 
+	 *
 	 * @return mixed
 	 */
 	public function get_data() {
