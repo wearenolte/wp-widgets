@@ -35,7 +35,7 @@ class Register
 	}
 
 	/**
-	 * Unregister default wp widgets.
+	 * Unregister all widgets.
 	 */
 	public static function unregister_all() {
 		global $wp_widget_factory;
@@ -50,11 +50,24 @@ class Register
 	 */
 	public static function do_registration() {
 		foreach ( self::$_registered_widgets['leean'] as $widget ) {
-			register_widget( __NAMESPACE__ . '\\Widgets\\' . $widget );
+			self::register( __NAMESPACE__ . '\\Widgets\\' . $widget );
 		}
 
 		foreach ( self::$_registered_widgets['custom'] as $widget ) {
-			register_widget( $widget );
+			self::register( $widget );
+		}
+	}
+
+	/**
+	 * Register a widget and run its post_registration function.
+	 *
+	 * @param string $widget_class Full class name (including namespace) of the widget.
+	 */
+	private static function register( $widget_class ) {
+		register_widget( $widget_class );
+
+		if ( method_exists( $widget_class, 'post_registration' ) ) {
+			call_user_func( [ $widget_class, 'post_registration' ] );
 		}
 	}
 }

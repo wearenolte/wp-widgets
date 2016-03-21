@@ -19,9 +19,9 @@ class AbstractWidget extends \WP_Widget
 	 *
 	 * @param string $title       Widget title
 	 * @param string $description Widget description.
-	 * @param bool   $slug		  Widget slg (use class name if not supplied).
+	 * @param bool   $slug		  Widget slug (use class name if not supplied).
 	 */
-	function __construct( $title, $description, $slug = false ) {
+	public function __construct( $title, $description, $slug = false ) {
 		$this->_slug = $slug ? $slug : strtolower( ( new \ReflectionClass( $this ) )->getShortName() );
 
 		parent::__construct( $this->_slug, $title, [
@@ -34,12 +34,19 @@ class AbstractWidget extends \WP_Widget
 	 *
 	 * @return string
 	 */
-	function get_slug() {
+	public function get_slug() {
 		return $this->_slug;
+	}
+
+	public function get_data() {
+
+		return 'fisg';
 	}
 
 	/**
 	 * Front-end display of widget.
+	 * By default we just display an error message because these widgets are only accessible via the API.
+	 * However you could override this function if you want to also display it using the normal WP engine.
 	 *
 	 * @see WP_Widget::widget()
 	 *
@@ -48,21 +55,14 @@ class AbstractWidget extends \WP_Widget
 	 */
 	public function widget( $args, $instance ) {
 
-//		Helpers\esc_widget_wrapper_e( $args['before_widget'] );
-//
-//		if ( $instance['title'] ) {
-//			Helpers\esc_widget_wrapper_e( $args['before_title'] );
-//			echo esc_html( $instance['title'] );
-//			Helpers\esc_widget_wrapper_e( $args['after_title'] );
-//		}
-//
-//		$fields = get_fields( 'widget_' . $args['widget_id'] );
-//
-//		$fields['image']['src'] = $fields['image']['url'];
-//
-//		Helpers\load_partial( 'molecules/amtrak-advert', $fields );
-//
-//		Helpers\esc_widget_wrapper_e( $args['after_widget'] );
+		?>
+
+		<h3><?php echo esc_html( $instance['title'] ? $instance['title'] : '' ) ?></h3>
+
+		<pre>This is a back-end widget only. Access the data via the API.</pre>
+
+		<?php
+
 	}
 
 	/**
