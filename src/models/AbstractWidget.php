@@ -1,5 +1,7 @@
 <?php namespace Leean\Widgets\Models;
 
+use Leean\Acf\All;
+
 /**
  * Class AbstractWidget.
  *
@@ -40,7 +42,7 @@ class AbstractWidget extends \WP_Widget
 
 	public function get_data() {
 
-		return 'fisg';
+		return All::get_widget_fields( $this->id );
 	}
 
 	/**
