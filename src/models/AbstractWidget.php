@@ -40,9 +40,18 @@ class AbstractWidget extends \WP_Widget
 		return $this->_slug;
 	}
 
+	/**
+	 * Get the widget's data
+	 * 
+	 * @return mixed
+	 */
 	public function get_data() {
+		$settings = $this->get_settings()[ $this->number ];
 
-		return All::get_widget_fields( $this->id );
+		return array_merge(
+			[ 'title' => $settings['title'] ],
+			All::get_widget_fields( $this->id )
+		);
 	}
 
 	/**
