@@ -83,7 +83,7 @@ class AbstractWidget extends \WP_Widget
 	}
 
 	/**
-	 * Back-end widget form.
+	 * Back-end widget form. We just add the title here (you can use ACF to add other fields).
 	 *
 	 * @see WP_Widget::form()
 	 *
