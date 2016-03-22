@@ -12,11 +12,12 @@
     }
   ],
   "require": {
-    "php": ">=5.4"
+    "php": ">=5.4",
+    "moxie-leean/wp-acf": "dev-master"
   },
   "autoload": {
     "psr-4": {
-      "Leean\\": "src/"
+      "Leean\\Widgets\\": "src/"
     }
   },
   "require-dev": {
