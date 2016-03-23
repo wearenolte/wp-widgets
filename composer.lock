@@ -4,9 +4,55 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "120e6cea06d5263c53050ff2168287ca",
-    "content-hash": "fdb1b5564fa34da931d2256a55c3dd4f",
-    "packages": [],
+    "hash": "d520e34f5d5d0cb1377404f5dfe9e66a",
+    "content-hash": "3b527144cf3cf0ec92a7b09a31371bbb",
+    "packages": [
+        {
+            "name": "moxie-leean/wp-acf",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/moxie-leean/wp-acf.git",
+                "reference": "8154392b82e4db60e90d52c7bbfed8cfcb21e3b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/moxie-leean/wp-acf/zipball/8154392b82e4db60e90d52c7bbfed8cfcb21e3b0",
+                "reference": "8154392b82e4db60e90d52c7bbfed8cfcb21e3b0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "2.*",
+                "wp-coding-standards/wpcs": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Leean\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Fenton",
+                    "email": "devs@getmoxied.net"
+                }
+            ],
+            "description": "Helper functions for working with Advanced Custom Fields",
+            "homepage": "https://github.com/moxie-leean/wp-acf",
+            "keywords": [
+                "acf",
+                "wordpress"
+            ],
+            "time": "2016-03-21 22:36:42"
+        }
+    ],
     "packages-dev": [
         {
             "name": "squizlabs/php_codesniffer",
@@ -87,7 +133,7 @@
         },
         {
             "name": "wp-coding-standards/wpcs",
-            "version": "dev-master",
+            "version": "0.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git",
@@ -125,7 +171,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "wp-coding-standards/wpcs": 20
+        "moxie-leean/wp-acf": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
