@@ -20,7 +20,7 @@ class LeeanDownloads extends AbstractWidget
 	 * Post registration.
 	 */
 	public static function post_registration() {
-		if ( function_exists( 'acf_add_local_field_group' ) ):
+		if ( function_exists( 'acf_add_local_field_group' ) ) :
 
 			acf_add_local_field_group( array(
 				'key' => 'group_56f9d3400aff4',
