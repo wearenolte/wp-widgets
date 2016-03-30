@@ -65,7 +65,8 @@ class LeeanMenu extends AbstractWidget
 	public function update( $new_instance, $old_instance ) {
 		$menus = get_terms( 'nav_menu', array( 'hide_empty' => true ) );
 
-		$selected_menu = sanitize_text_field( wp_unslash( $_REQUEST[ $this->get_menu_field_id() ] ) );
+		$selected_menu = isset( $_REQUEST[ $this->get_menu_field_id() ] ) ?
+			sanitize_text_field( wp_unslash( $_REQUEST[ $this->get_menu_field_id() ] ) ) : false;
 
 		foreach ( $menus as $menu ) {
 			if ( $selected_menu === $menu->slug ) {

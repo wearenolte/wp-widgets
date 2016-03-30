@@ -11,6 +11,5 @@
     <exclude name="Squiz.Commenting.FunctionComment" />
     <exclude name="WordPress.Files.FileName" />
     <exclude name="WordPress.VIP.SuperGlobalInputUsage" />
-    <exclude name="WordPress.VIP.ValidatedSanitizedInput" />
   </rule>
 </ruleset>
