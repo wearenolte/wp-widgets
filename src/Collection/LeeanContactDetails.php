@@ -1,7 +1,6 @@
 <?php namespace Leean\Widgets\Collection;
 
 use Leean\Widgets\Models\AbstractWidget;
-use Leean\Acf;
 
 /**
  * Class LeeanContactDetails.
