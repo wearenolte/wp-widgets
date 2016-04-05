@@ -16,5 +16,4 @@ class LeeanContactDetails extends AbstractWidget
 	public function __construct() {
 		parent::__construct( 'Leean Contact Details', 'Display contact details' );
 	}
-
 }
