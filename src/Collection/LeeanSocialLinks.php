@@ -25,7 +25,7 @@ class LeeanSocialLinks extends AbstractWidget
 	public function get_data() {
 		$data = parent::get_data();
 
-		$data['items'] = Acf::get_option_field( 'items' );
+		$data['items'] = Acf::get_option_field( 'social_links' );
 
 		return $data;
 	}

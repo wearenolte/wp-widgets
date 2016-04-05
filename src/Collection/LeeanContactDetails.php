@@ -25,10 +25,10 @@ class LeeanContactDetails extends AbstractWidget
 	public function get_data() {
 		$data = parent::get_data();
 
-		$data['logo'] = Acf::get_option_field( 'logo' );
-		$data['address'] = Acf::get_option_field( 'address' );
-		$data['phone'] = Acf::get_option_field( 'phone' );
-		$data['email'] = Acf::get_option_field( 'email' );
+		$data['logo'] = Acf::get_option_field( 'contact_details_logo' );
+		$data['address'] = Acf::get_option_field( 'contact_details_address' );
+		$data['phone'] = Acf::get_option_field( 'contact_details_phone' );
+		$data['email'] = Acf::get_option_field( 'contact_details_email' );
 
 		return $data;
 	}
