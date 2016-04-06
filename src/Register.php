@@ -1,5 +1,7 @@
 <?php namespace Leean\Widgets;
 
+use Leean\Widgets\Models\AbstractWidget;
+
 /**
  * Class to provide widget functions.
  */
@@ -69,5 +71,31 @@ class Register
 		if ( method_exists( $widget_class, 'post_registration' ) ) {
 			call_user_func( [ $widget_class, 'post_registration' ] );
 		}
+	}
+
+	/**
+	 * Gets a specific instance of a widget
+	 *
+	 * @param string $widget_id The widget id
+	 * @return AbstractWidget|bool
+	 */
+	public static function get_widget_instance( $widget_id ) {
+		global $wp_registered_widgets;
+
+		if ( ! isset( $wp_registered_widgets[ $widget_id ] ) ) {
+			return false;
+		}
+
+		$model = $wp_registered_widgets[ $widget_id ]['callback'][0];
+
+		if ( ! is_a( $model, 'Leean\Widgets\Models\AbstractWidget' ) ) {
+			return false;
+		}
+
+		$key = $wp_registered_widgets[ $widget_id ]['params'][0]['number'];
+
+		$model->_set( $key );
+
+		return $model;
 	}
 }
