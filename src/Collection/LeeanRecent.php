@@ -77,5 +77,4 @@ class LeeanRecent extends AbstractWidget
 
 		return $new_instance;
 	}
-
 }
