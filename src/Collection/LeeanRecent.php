@@ -94,4 +94,37 @@ class LeeanRecent extends AbstractWidget
 
 		return $new_instance;
 	}
+
+	/**
+	 * Get the widget's data.
+	 *
+	 * @return mixed
+	 */
+	public function get_data() {
+		global $post;
+
+		$settings = $this->get_settings()[ $this->number ];
+
+		$args = array(
+			'post_type' => $settings['post_type'],
+			'posts_per_page' => $settings['number'],
+		);
+
+		$recent = new \WP_Query( $args );
+
+		$data = parent::get_data();
+
+		$data['recent'] = [];
+
+		while ( $recent->have_posts() ) {
+			$recent->the_post();
+
+			$post->link = get_permalink();
+			$data['recent'][] = $post;
+		}
+
+		wp_reset_postdata();
+
+		return $data;
+	}
 }
