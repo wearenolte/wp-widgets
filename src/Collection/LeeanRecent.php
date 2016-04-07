@@ -26,8 +26,13 @@ class LeeanRecent extends AbstractWidget
 
 		$post_types = get_post_types();
 
-		$selected = isset( $instance['post_type'] ) ? $instance['post_type'] : 'post';
-		$number = isset( $instance['number'] ) ? absint( $instance['number'] ) : 3;
+		$selected = isset( $instance['post_type'] )
+			? $instance['post_type']
+			: 'post';
+
+		$number = isset( $instance['number'] )
+			? absint( $instance['number'] )
+			: 3;
 
 		$field_post_type = $this->get_field_id( 'post_type' );
 		$field_number = $this->get_field_id( 'number' );
@@ -77,8 +82,9 @@ class LeeanRecent extends AbstractWidget
 
 		$post_types = get_post_types();
 
-		$selected = isset( $_REQUEST[ $this->get_field_id( 'post_type' ) ] ) ?
-			sanitize_text_field( wp_unslash( $_REQUEST[ $this->get_field_id( 'post_type' ) ] ) ) : false;
+		$selected = isset( $_REQUEST[ $this->get_field_id( 'post_type' ) ] )
+			? sanitize_text_field( wp_unslash( $_REQUEST[ $this->get_field_id( 'post_type' ) ] ) )
+			: false;
 
 		foreach ( $post_types as $post_type ) {
 			if ( $selected === $post_type ) {
@@ -87,8 +93,9 @@ class LeeanRecent extends AbstractWidget
 			}
 		}
 
-		$number = isset( $_REQUEST[ $this->get_field_id( 'number' ) ] ) ?
-			absint( $_REQUEST[ $this->get_field_id( 'number' ) ] ) : false;
+		$number = isset( $_REQUEST[ $this->get_field_id( 'number' ) ] )
+			? absint( $_REQUEST[ $this->get_field_id( 'number' ) ] )
+			: false;
 
 		$new_instance['number'] = $number;
 
