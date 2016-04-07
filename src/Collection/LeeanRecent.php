@@ -27,7 +27,7 @@ class LeeanRecent extends AbstractWidget
 		$post_types = get_post_types();
 
 		$selected = isset( $instance['post_type'] ) ? $instance['post_type'] : 'post';
-		$number = isset( $instance['number'] ) ? $instance['number'] : 3;
+		$number = isset( $instance['number'] ) ? absint( $instance['number'] ) : 3;
 
 		$field_post_type = $this->get_field_id( 'post_type' );
 		$field_number = $this->get_field_id( 'number' );
@@ -114,13 +114,13 @@ class LeeanRecent extends AbstractWidget
 
 		$data = parent::get_data();
 
-		$data['recent'] = [];
+		$data['items'] = [];
 
 		while ( $recent->have_posts() ) {
 			$recent->the_post();
 
 			$post->link = get_permalink();
-			$data['recent'][] = $post;
+			$data['items'][] = $post;
 		}
 
 		wp_reset_postdata();
