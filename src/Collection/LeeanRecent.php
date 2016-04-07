@@ -28,11 +28,11 @@ class LeeanRecent extends AbstractWidget
 
 		$selected = isset( $instance['post_type'] )
 			? $instance['post_type']
-			: 'post';
+			: '';
 
 		$number = isset( $instance['number'] )
 			? absint( $instance['number'] )
-			: 3;
+			: 0;
 
 		$field_post_type = $this->get_field_id( 'post_type' );
 		$field_number = $this->get_field_id( 'number' );
@@ -86,7 +86,7 @@ class LeeanRecent extends AbstractWidget
 			? sanitize_text_field( wp_unslash( $_REQUEST[ $this->get_field_id( 'post_type' ) ] ) )
 			: false;
 
-		if ( in_array( $selected, $post_types ) ) {
+		if ( in_array( $selected, $post_types, true ) ) {
 			$new_instance['post_type'] = $selected;
 		}
 
@@ -109,10 +109,10 @@ class LeeanRecent extends AbstractWidget
 
 		$settings = $this->get_settings()[ $this->number ];
 
-		$args = array(
+		$args = [
 			'post_type' => $settings['post_type'],
 			'posts_per_page' => $settings['number'],
-		);
+		];
 
 		$recent = new \WP_Query( $args );
 
