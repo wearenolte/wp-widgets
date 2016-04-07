@@ -86,11 +86,8 @@ class LeeanRecent extends AbstractWidget
 			? sanitize_text_field( wp_unslash( $_REQUEST[ $this->get_field_id( 'post_type' ) ] ) )
 			: false;
 
-		foreach ( $post_types as $post_type ) {
-			if ( $selected === $post_type ) {
-				$new_instance['post_type'] = $selected;
-				break;
-			}
+		if ( in_array( $selected, $post_types ) ) {
+			$new_instance['post_type'] = $selected;
 		}
 
 		$number = isset( $_REQUEST[ $this->get_field_id( 'number' ) ] )
