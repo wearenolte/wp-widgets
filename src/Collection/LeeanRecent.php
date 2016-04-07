@@ -26,17 +26,19 @@ class LeeanRecent extends AbstractWidget
 
 		$post_types = get_post_types();
 
-		$selected = isset( $instance['post_type'] ) ? $instance['post_type'] : '';
+		$selected = isset( $instance['post_type'] ) ? $instance['post_type'] : 'post';
+		$number = isset( $instance['number'] ) ? $instance['number'] : 3;
 
-		$field_name = $this->get_field_id( 'post_type' );
+		$field_post_type = $this->get_field_id( 'post_type' );
+		$field_number = $this->get_field_id( 'number' );
 		?>
 
 		<p>
 
-			<label for="<?php echo esc_attr( $field_name ) ?>">Post Type:</label>
+			<label for="<?php echo esc_attr( $field_post_type ) ?>">Post Type:</label>
 
-			<select id="<?php echo esc_attr( $field_name ) ?>"
-					name="<?php echo esc_attr( $field_name ) ?>">
+			<select id="<?php echo esc_attr( $field_post_type ) ?>"
+					name="<?php echo esc_attr( $field_post_type ) ?>">
 
 				<?php foreach ( $post_types as $post_type ) : ?>
 
@@ -48,6 +50,16 @@ class LeeanRecent extends AbstractWidget
 				<?php endforeach ?>
 
 			</select>
+
+		</p>
+
+		<p>
+
+			<label for="<?php echo esc_attr( $field_number ) ?>">Number of posts to display:</label>
+
+			<input type="number" id="<?php echo esc_attr( $field_number ) ?>"
+					name="<?php echo esc_attr( $field_number ) ?>"
+					value="<?php echo esc_attr( $number ) ?>">
 
 		</p>
 
@@ -74,6 +86,11 @@ class LeeanRecent extends AbstractWidget
 				break;
 			}
 		}
+
+		$number = isset( $_REQUEST[ $this->get_field_id( 'number' ) ] ) ?
+			absint( $_REQUEST[ $this->get_field_id( 'number' ) ] ) : false;
+
+		$new_instance['number'] = $number;
 
 		return $new_instance;
 	}
