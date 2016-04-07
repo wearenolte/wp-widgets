@@ -10,7 +10,7 @@ use Leean\Widgets\Models\AbstractWidget;
 class LeeanDownloads extends AbstractWidget
 {
 	/**
-	 * LeeanPreview constructor.
+	 * LeeanDownloads constructor.
 	 */
 	public function __construct() {
 		parent::__construct( 'Leean Downloads', 'Display a list of downloads' );
