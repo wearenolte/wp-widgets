@@ -1,20 +1,19 @@
-<?php namespace Leean\Widgets\Collection;
+<?php namespace Lean\Widgets\Collection;
 
-use Leean\Widgets\Models\AbstractWidget;
-use Leean\Acf;
+use Lean\Widgets\Models\AbstractWidget;
+use Lean\Acf;
 
 /**
- * Class LeeanContactDetails.
+ * Class LeanContactDetails.
  *
- * @package Leean\Widgets\Collection
+ * @package Lean\Widgets\Collection
  */
-class LeeanContactDetails extends AbstractWidget
-{
+class LeanContactDetails extends AbstractWidget {
 	/**
 	 * Constructor.
 	 */
 	public function __construct() {
-		parent::__construct( 'Leean Contact Details', 'Display contact details' );
+		parent::__construct( 'Lean Contact Details', 'Display contact details' );
 	}
 
 	/**

@@ -1,19 +1,18 @@
-<?php namespace Leean\Widgets\Collection;
+<?php namespace Lean\Widgets\Collection;
 
-use Leean\Widgets\Models\AbstractWidget;
+use Lean\Widgets\Models\AbstractWidget;
 
 /**
- * Class LeeanDownloads.
+ * Class LeanDownloads.
  *
- * @package Leean\Widgets\Collection
+ * @package Lean\Widgets\Collection
  */
-class LeeanDownloads extends AbstractWidget
-{
+class LeanDownloads extends AbstractWidget {
 	/**
-	 * LeeanDownloads constructor.
+	 * LeanDownloads constructor.
 	 */
 	public function __construct() {
-		parent::__construct( 'Leean Downloads', 'Display a list of downloads' );
+		parent::__construct( 'Lean Downloads', 'Display a list of downloads' );
 	}
 
 	/**
@@ -24,7 +23,7 @@ class LeeanDownloads extends AbstractWidget
 
 			acf_add_local_field_group( array(
 				'key' => 'group_56f9d3400aff4',
-				'title' => 'LeeanDownloads',
+				'title' => 'LeanDownloads',
 				'fields' => array(
 					array(
 						'key' => 'field_56f9d3b907ec5',
@@ -135,7 +134,7 @@ class LeeanDownloads extends AbstractWidget
 						array(
 							'param' => 'widget',
 							'operator' => '==',
-							'value' => 'leean-downloads',
+							'value' => 'lean-downloads',
 						),
 					),
 				),

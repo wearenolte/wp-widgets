@@ -8,18 +8,18 @@
 The easiest way to install this package is by using composer from your terminal:
 
 ```bash
-composer require moxie-leean/wp-widgets
+composer require moxie-lean/wp-widgets
 ```
 
 Or by adding the following lines on your `composer.json` file
 
 ```json
 "require": {
-  "moxie-leean/wp-widgets": "dev-master"
+  "moxie-lean/wp-widgets": "dev-master"
 }
 ```
 
-This will download the files from the [packagist site](https://packagist.org/packages/moxie-leean/wp-widgets) 
+This will download the files from the [packagist site](https://packagist.org/packages/moxie-lean/wp-widgets) 
 and set you up with the latest version located on master branch of the repository. 
 
 After that you can include the `autoload.php` file in order to
@@ -36,18 +36,18 @@ You first need to register the widgets you want to use using the ```Register::in
 
 ```php
 [
-    'leean' => [],
+    'lean' => [],
     'custom' => [],
 ]
 ```
 
-Where 'leean' is the list of pre-defined widgets you want to use, and 'custom' is a list of any custom widgets you want to add for this project. For example:
+Where 'lean' is the list of pre-defined widgets you want to use, and 'custom' is a list of any custom widgets you want to add for this project. For example:
 
 ```php
-\Leean\Widgets\Register::init([
-    'leean' => [
-        'LeeanPreview',
-        'LeeanMenu,
+\Lean\Widgets\Register::init([
+    'lean' => [
+        'LeanPreview',
+        'LeanMenu,
     ],
     'custom' => [
         'MyProject\Widgets\MyCustomWidget'
@@ -55,9 +55,9 @@ Where 'leean' is the list of pre-defined widgets you want to use, and 'custom' i
 ]);
 ```
 
-Note that Leean widgets can be registered with their short class name, whereas custom widgets need a fully qualified namespace.
+Note that Lean widgets can be registered with their short class name, whereas custom widgets need a fully qualified namespace.
  
-All custom widget objects must extend the ```\Leean\Widgets\Models\AbstractWidget``` class. See below.
+All custom widget objects must extend the ```\Lean\Widgets\Models\AbstractWidget``` class. See below.
 
 You can register widget areas using the usual WordPress function:
 
@@ -71,13 +71,12 @@ register_sidebar( array(
 
 ### Creating Custom Widgets
 
-All custom widgets must extend the ```\Leean\Widgets\Models\AbstractWidget``` class. The simplest widget you can create just needs to implement the ```__construct()``` function, eg:
+All custom widgets must extend the ```\Lean\Widgets\Models\AbstractWidget``` class. The simplest widget you can create just needs to implement the ```__construct()``` function, eg:
 
 ```php
-use Leean\Widgets\Models\AbstractWidget;
+use Lean\Widgets\Models\AbstractWidget;
 
-class MyWidget extends AbstractWidget
-{
+class MyWidget extends AbstractWidget {
 	public function __construct() {
 		parent::__construct( 'My Widget', 'Displays something really cool.' );
 	}

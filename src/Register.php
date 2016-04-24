@@ -1,12 +1,11 @@
-<?php namespace Leean\Widgets;
+<?php namespace Lean\Widgets;
 
-use Leean\Widgets\Models\AbstractWidget;
+use Lean\Widgets\Models\AbstractWidget;
 
 /**
  * Class to provide widget functions.
  */
-class Register
-{
+class Register {
 	/**
 	 * Registered widgets for this project.
 	 *
@@ -17,7 +16,7 @@ class Register
 	/**
 	 * Init. Takes $widgets_to_register args in the following format:
 	 * [
-	 * 	 'leean' => [ 'LeeanPreview', 'LeeanMenu' ],
+	 * 	 'lean' => [ 'LeanPreview', 'LeanMenu' ],
 	 *   'custom' => [ 'MyNamespace\MyWidget' ],
 	 * ]
 	 *
@@ -25,7 +24,7 @@ class Register
 	 */
 	public static function init( $widgets_to_register = [] ) {
 		$widgets_to_register = wp_parse_args( $widgets_to_register, [
-			'leean' => [],
+			'lean' => [],
 			'custom' => [],
 		] );
 
@@ -51,7 +50,7 @@ class Register
 	 * Register required widgets.
 	 */
 	public static function register_widgets() {
-		foreach ( self::$_registered_widgets['leean'] as $widget ) {
+		foreach ( self::$_registered_widgets['lean'] as $widget ) {
 			self::register_widget( __NAMESPACE__ . '\\Collection\\' . $widget );
 		}
 
@@ -88,7 +87,7 @@ class Register
 
 		$model = $wp_registered_widgets[ $widget_id ]['callback'][0];
 
-		if ( ! is_a( $model, 'Leean\Widgets\Models\AbstractWidget' ) ) {
+		if ( ! is_a( $model, 'Lean\Widgets\Models\AbstractWidget' ) ) {
 			return false;
 		}
 

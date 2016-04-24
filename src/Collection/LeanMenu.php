@@ -1,19 +1,18 @@
-<?php namespace Leean\Widgets\Collection;
+<?php namespace Lean\Widgets\Collection;
 
-use Leean\Widgets\Models\AbstractWidget;
+use Lean\Widgets\Models\AbstractWidget;
 
 /**
- * Class LeeanMenu.
+ * Class LeanMenu.
  *
- * @package Leean\Widgets\Collection
+ * @package Lean\Widgets\Collection
  */
-class LeeanMenu extends AbstractWidget
-{
+class LeanMenu extends AbstractWidget {
 	/**
 	 * Constructor.
 	 */
 	public function __construct() {
-		parent::__construct( 'Leean Menu', 'Display a menu' );
+		parent::__construct( 'Lean Menu', 'Display a menu' );
 	}
 
 	/**
