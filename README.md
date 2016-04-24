@@ -94,10 +94,9 @@ The post registration function runs just after the widget is registered. You can
 ```php
 public static function post_registration() {
     if ( function_exists( 'acf_add_local_field_group' ) ) :
-
-        acf_add_local_field_group( array(
-        ...				
+    endif;
 }
+```
 
 #### Get Data
 
