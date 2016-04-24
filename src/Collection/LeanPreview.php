@@ -1,19 +1,18 @@
-<?php namespace Leean\Widgets\Collection;
+<?php namespace Lean\Widgets\Collection;
 
-use Leean\Widgets\Models\AbstractWidget;
+use Lean\Widgets\Models\AbstractWidget;
 
 /**
- * Class LeeanPreview.
+ * Class LeanPreview.
  *
- * @package Leean\Widgets\Collection
+ * @package Lean\Widgets\Collection
  */
-class LeeanPreview extends AbstractWidget
-{
+class LeanPreview extends AbstractWidget {
 	/**
-	 * LeeanPreview constructor.
+	 * LeanPreview constructor.
 	 */
 	public function __construct() {
-		parent::__construct( 'Leean Preview', 'Display previews (header/description/link)' );
+		parent::__construct( 'Lean Preview', 'Display previews (header/description/link)' );
 	}
 
 	/**
@@ -24,7 +23,7 @@ class LeeanPreview extends AbstractWidget
 
 			acf_add_local_field_group( array(
 				'key' => 'group_56ef50a64f75f',
-				'title' => 'LeeanPreview',
+				'title' => 'LeanPreview',
 				'fields' => array(
 					array(
 						'key' => 'field_56ef50b46191d',
@@ -148,7 +147,7 @@ class LeeanPreview extends AbstractWidget
 						array(
 							'param' => 'widget',
 							'operator' => '==',
-							'value' => 'leean-preview',
+							'value' => 'lean-preview',
 						),
 					),
 				),

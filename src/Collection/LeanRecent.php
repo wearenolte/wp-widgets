@@ -1,19 +1,18 @@
-<?php namespace Leean\Widgets\Collection;
+<?php namespace Lean\Widgets\Collection;
 
-use Leean\Widgets\Models\AbstractWidget;
+use Lean\Widgets\Models\AbstractWidget;
 
 /**
- * Class LeeanRecent.
+ * Class LeanRecent.
  *
- * @package Leean\Widgets\Collection
+ * @package Lean\Widgets\Collection
  */
-class LeeanRecent extends AbstractWidget
-{
+class LeanRecent extends AbstractWidget {
 	/**
 	 * Constructor.
 	 */
 	public function __construct() {
-		parent::__construct( 'Leean Recent', 'Display a list of recent posts' );
+		parent::__construct( 'Lean Recent', 'Display a list of recent posts' );
 	}
 
 	/**

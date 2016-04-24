@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6a457009365c0932df687405ab7c2168",
-    "content-hash": "02895093f70342b75025110fab0eb5ca",
+    "hash": "9b2f47599481518b7ef91b8d9fdabe83",
+    "content-hash": "99ef4ce98dd2b6f72ec5be47ab97404d",
     "packages": [
         {
-            "name": "moxie-leean/wp-acf",
-            "version": "0.4.1",
+            "name": "moxie-lean/wp-acf",
+            "version": "0.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/moxie-leean/wp-acf.git",
-                "reference": "983c1e3e738c41bb1e4aa0d500a27e68812ddb0c"
+                "reference": "e3c98a72ebc20b84571625d5ed0ff9d5ea5f4492"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moxie-leean/wp-acf/zipball/983c1e3e738c41bb1e4aa0d500a27e68812ddb0c",
-                "reference": "983c1e3e738c41bb1e4aa0d500a27e68812ddb0c",
+                "url": "https://api.github.com/repos/moxie-leean/wp-acf/zipball/e3c98a72ebc20b84571625d5ed0ff9d5ea5f4492",
+                "reference": "e3c98a72ebc20b84571625d5ed0ff9d5ea5f4492",
                 "shasum": ""
             },
             "require": {
@@ -54,25 +54,26 @@
                 "acf",
                 "wordpress"
             ],
-            "time": "2016-03-29 17:07:41"
+            "time": "2016-04-05 00:51:32"
         }
     ],
     "packages-dev": [
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "2.5.1",
+            "version": "2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "6731851d6aaf1d0d6c58feff1065227b7fda3ba8"
+                "reference": "1bcdf03b068a530ac1962ce671dead356eeba43b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/6731851d6aaf1d0d6c58feff1065227b7fda3ba8",
-                "reference": "6731851d6aaf1d0d6c58feff1065227b7fda3ba8",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/1bcdf03b068a530ac1962ce671dead356eeba43b",
+                "reference": "1bcdf03b068a530ac1962ce671dead356eeba43b",
                 "shasum": ""
             },
             "require": {
+                "ext-simplexml": "*",
                 "ext-tokenizer": "*",
                 "ext-xmlwriter": "*",
                 "php": ">=5.1.2"
@@ -133,7 +134,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2016-01-19 23:39:10"
+            "time": "2016-04-03 22:58:34"
         },
         {
             "name": "wp-coding-standards/wpcs",

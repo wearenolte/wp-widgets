@@ -1,14 +1,13 @@
-<?php namespace Leean\Widgets\Models;
+<?php namespace Lean\Widgets\Models;
 
-use Leean\Acf;
+use Lean\Acf;
 
 /**
  * Class AbstractWidget.
  *
- * @package Leean\Widgets\Models
+ * @package Lean\Widgets\Models
  */
-abstract class AbstractWidget extends \WP_Widget
-{
+abstract class AbstractWidget extends \WP_Widget {
 	/**
 	 * The slug.
 	 *
