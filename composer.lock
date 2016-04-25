@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9b2f47599481518b7ef91b8d9fdabe83",
-    "content-hash": "99ef4ce98dd2b6f72ec5be47ab97404d",
+    "hash": "04eb549b4db25d7e336adc420572e45a",
+    "content-hash": "ff58681ca1a3252fa42e68078aba2294",
     "packages": [
         {
             "name": "moxie-lean/wp-acf",
-            "version": "0.4.4",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/moxie-leean/wp-acf.git",
-                "reference": "e3c98a72ebc20b84571625d5ed0ff9d5ea5f4492"
+                "reference": "15232b3814aa7be8cf01b1d217f75ded1670d7bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moxie-leean/wp-acf/zipball/e3c98a72ebc20b84571625d5ed0ff9d5ea5f4492",
-                "reference": "e3c98a72ebc20b84571625d5ed0ff9d5ea5f4492",
+                "url": "https://api.github.com/repos/moxie-leean/wp-acf/zipball/15232b3814aa7be8cf01b1d217f75ded1670d7bc",
+                "reference": "15232b3814aa7be8cf01b1d217f75ded1670d7bc",
                 "shasum": ""
             },
             "require": {
@@ -31,7 +31,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Leean\\": "src/"
+                    "Lean\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -54,7 +54,7 @@
                 "acf",
                 "wordpress"
             ],
-            "time": "2016-04-05 00:51:32"
+            "time": "2016-04-24 03:21:52"
         }
     ],
     "packages-dev": [
