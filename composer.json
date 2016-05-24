@@ -13,7 +13,7 @@
   ],
   "require": {
     "php": ">=5.4",
-    "moxie-lean/wp-acf": "0.*.*"
+    "moxie-lean/wp-acf": "1.*.*"
   },
   "autoload": {
     "psr-4": {
