@@ -70,7 +70,6 @@ abstract class AbstractWidget extends \WP_Widget {
 	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
-
 		?>
 
 		<h3><?php echo esc_html( $instance['title'] ? $instance['title'] : '' ) ?></h3>
@@ -78,7 +77,6 @@ abstract class AbstractWidget extends \WP_Widget {
 		<pre>This is a back-end widget only. Access the data via the API.</pre>
 
 		<?php
-
 	}
 
 	/**
@@ -89,13 +87,11 @@ abstract class AbstractWidget extends \WP_Widget {
 	 * @param array $instance Previously saved values from database.
 	 */
 	public function form( $instance ) {
-		$title = ! empty( $instance['title'] )
-			? $instance['title']
-			: '';
+		$title = empty( $instance['title'] ) ? '' : $instance['title'];
 		?>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>">
-				<?php esc_html_e( 'Title:' ); ?>
+				<?php esc_html( 'Title:' ); ?>
 			</label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
 				   name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text"
@@ -116,10 +112,7 @@ abstract class AbstractWidget extends \WP_Widget {
 	 */
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
-		$instance['title'] = ( ! empty( $new_instance['title'] ) )
-			? strip_tags( $new_instance['title'] )
-			: '';
-
+		$instance['title'] = empty( $new_instance['title'] ) ? '' : strip_tags( $new_instance['title'] );
 		return $instance;
 	}
 }
