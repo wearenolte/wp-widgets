@@ -11,7 +11,7 @@ class Register {
 	 *
 	 * @var array
 	 */
-	private static $_registered_widgets = [];
+	private static $_widgets = [];
 
 	/**
 	 * Init. Takes $widgets_to_register args in the following format:
@@ -28,7 +28,7 @@ class Register {
 			'custom' => [],
 		] );
 
-		self::$_registered_widgets = $widgets_to_register;
+		self::$_widgets = $widgets_to_register;
 
 		add_action( 'widgets_init', [ __CLASS__, 'unregister_all' ], 11 );
 
@@ -50,11 +50,11 @@ class Register {
 	 * Register required widgets.
 	 */
 	public static function register_widgets() {
-		foreach ( self::$_registered_widgets['lean'] as $widget ) {
+		foreach ( self::$_widgets['lean'] as $widget ) {
 			self::register_widget( __NAMESPACE__ . '\\Collection\\' . $widget );
 		}
 
-		foreach ( self::$_registered_widgets['custom'] as $widget ) {
+		foreach ( self::$_widgets['custom'] as $widget ) {
 			self::register_widget( $widget );
 		}
 	}
