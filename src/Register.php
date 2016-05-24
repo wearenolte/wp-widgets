@@ -67,8 +67,9 @@ class Register {
 	private static function register_widget( $widget_class ) {
 		register_widget( $widget_class );
 
-		if ( method_exists( $widget_class, 'post_registration' ) ) {
-			call_user_func( [ $widget_class, 'post_registration' ] );
+		$callback = [ $widget_class, 'post_registration' ];
+		if ( is_callable( $callback, true ) ) {
+			call_user_func( $callback );
 		}
 	}
 
