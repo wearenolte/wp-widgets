@@ -2,7 +2,7 @@
   "name": "moxie-lean/wp-widgets",
   "description": "Control the WP widgets whilst using WP in as a headless CMS.",
   "keywords": ["wordpress"],
-  "homepage": "https://github.com/moxie-leean/wp-widgets",
+  "homepage": "https://github.com/moxie-lean/wp-widgets",
   "type": "library",
   "license": "MIT",
   "authors": [
