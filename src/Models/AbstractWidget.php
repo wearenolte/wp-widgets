@@ -91,7 +91,7 @@ abstract class AbstractWidget extends \WP_Widget {
 		?>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>">
-				<?php esc_html( 'Title:' ); ?>
+				Title:
 			</label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
 				   name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text"
@@ -111,7 +111,7 @@ abstract class AbstractWidget extends \WP_Widget {
 	 * @return array Updated safe values to be saved.
 	 */
 	public function update( $new_instance, $old_instance ) {
-		$instance = array();
+		$instance = [];
 		$instance['title'] = empty( $new_instance['title'] ) ? '' : strip_tags( $new_instance['title'] );
 		return $instance;
 	}
