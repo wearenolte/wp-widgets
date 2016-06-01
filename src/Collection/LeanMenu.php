@@ -87,6 +87,10 @@ class LeanMenu extends AbstractWidget {
 
 		$settings = $this->get_settings()[ $this->number ];
 
+		if ( ! isset( $settings['menu'] ) ) {
+			return $data;
+		}
+
 		$menu_items = wp_get_nav_menu_items( $settings['menu'] );
 
 		foreach ( $menu_items as $menu_item ) {
