@@ -22,11 +22,11 @@ class LeanPreview extends AbstractWidget {
 		if ( function_exists( 'acf_add_local_field_group' ) ) :
 
 			acf_add_local_field_group(
-				array(
+				[
 					'key'                   => 'group_56ef50a64f75f',
 					'title'                 => 'LeanPreview',
-					'fields'                => array(
-						array(
+					'fields'                => [
+						[
 							'key'               => 'field_56ef50b46191d',
 							'label'             => 'Items',
 							'name'              => 'items',
@@ -34,18 +34,18 @@ class LeanPreview extends AbstractWidget {
 							'instructions'      => '',
 							'required'          => 1,
 							'conditional_logic' => 0,
-							'wrapper'           => array(
+							'wrapper'           => [
 								'width' => '',
 								'class' => '',
 								'id'    => '',
-							),
+							],
 							'collapsed'         => '',
 							'min'               => 1,
 							'max'               => '',
 							'layout'            => 'block',
 							'button_label'      => 'Add Item',
-							'sub_fields'        => array(
-								array(
+							'sub_fields'        => [
+								[
 									'key'               => 'field_56ef50ea6191e',
 									'label'             => 'Title',
 									'name'              => 'title',
@@ -53,11 +53,11 @@ class LeanPreview extends AbstractWidget {
 									'instructions'      => '',
 									'required'          => 0,
 									'conditional_logic' => 0,
-									'wrapper'           => array(
+									'wrapper'           => [
 										'width' => '',
 										'class' => '',
 										'id'    => '',
-									),
+									],
 									'default_value'     => '',
 									'placeholder'       => '',
 									'prepend'           => '',
@@ -65,8 +65,8 @@ class LeanPreview extends AbstractWidget {
 									'maxlength'         => '',
 									'readonly'          => 0,
 									'disabled'          => 0,
-								),
-								array(
+								],
+								[
 									'key'               => 'field_56ef514b6191f',
 									'label'             => 'Description',
 									'name'              => 'description',
@@ -74,11 +74,11 @@ class LeanPreview extends AbstractWidget {
 									'instructions'      => '',
 									'required'          => 0,
 									'conditional_logic' => 0,
-									'wrapper'           => array(
+									'wrapper'           => [
 										'width' => '',
 										'class' => '',
 										'id'    => '',
-									),
+									],
 									'default_value'     => '',
 									'placeholder'       => '',
 									'maxlength'         => '',
@@ -86,8 +86,8 @@ class LeanPreview extends AbstractWidget {
 									'new_lines'         => 'wpautop',
 									'readonly'          => 0,
 									'disabled'          => 0,
-								),
-								array(
+								],
+								[
 									'key'               => 'field_56ef518061921',
 									'label'             => 'Button Text',
 									'name'              => 'button_text',
@@ -95,11 +95,11 @@ class LeanPreview extends AbstractWidget {
 									'instructions'      => '',
 									'required'          => 0,
 									'conditional_logic' => 0,
-									'wrapper'           => array(
+									'wrapper'           => [
 										'width' => '',
 										'class' => '',
 										'id'    => '',
-									),
+									],
 									'default_value'     => 'Read more',
 									'placeholder'       => '',
 									'prepend'           => '',
@@ -107,8 +107,8 @@ class LeanPreview extends AbstractWidget {
 									'maxlength'         => '',
 									'readonly'          => 0,
 									'disabled'          => 0,
-								),
-								array(
+								],
+								[
 									'key'               => 'field_56ef517661920',
 									'label'             => 'Link',
 									'name'              => 'link',
@@ -116,15 +116,15 @@ class LeanPreview extends AbstractWidget {
 									'instructions'      => '',
 									'required'          => 0,
 									'conditional_logic' => 0,
-									'wrapper'           => array(
+									'wrapper'           => [
 										'width' => '',
 										'class' => '',
 										'id'    => '',
-									),
+									],
 									'default_value'     => '',
 									'placeholder'       => '',
-								),
-								array(
+								],
+								[
 									'key'               => 'field_56ef51a161922',
 									'label'             => 'Open in New Window',
 									'name'              => 'new_window',
@@ -132,26 +132,26 @@ class LeanPreview extends AbstractWidget {
 									'instructions'      => '',
 									'required'          => 0,
 									'conditional_logic' => 0,
-									'wrapper'           => array(
+									'wrapper'           => [
 										'width' => '',
 										'class' => '',
 										'id'    => '',
-									),
+									],
 									'message'           => '',
 									'default_value'     => 0,
-								),
-							),
-						),
-					),
-					'location'              => array(
-						array(
-							array(
+								],
+							],
+						],
+					],
+					'location'              => [
+						[
+							[
 								'param'    => 'widget',
 								'operator' => '==',
 								'value'    => 'lean-preview',
-							),
-						),
-					),
+							],
+						],
+					],
 					'menu_order'            => 0,
 					'position'              => 'normal',
 					'style'                 => 'default',
@@ -160,7 +160,7 @@ class LeanPreview extends AbstractWidget {
 					'hide_on_screen'        => '',
 					'active'                => 1,
 					'description'           => '',
-				)
+				]
 			);
 
 		endif;

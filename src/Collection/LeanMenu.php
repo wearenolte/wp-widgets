@@ -23,7 +23,7 @@ class LeanMenu extends AbstractWidget {
 	public function form( $instance ) {
 		parent::form( $instance );
 
-		$menus = get_terms( 'nav_menu', array( 'hide_empty' => true ) );
+		$menus = get_terms( 'nav_menu', [ 'hide_empty' => true ] );
 
 		$selected_menu = isset( $instance['menu'] ) ? $instance['menu'] : '';
 
@@ -62,7 +62,7 @@ class LeanMenu extends AbstractWidget {
 	 * @return array
 	 */
 	public function update( $new_instance, $old_instance ) {
-		$menus = get_terms( 'nav_menu', array( 'hide_empty' => true ) );
+		$menus = get_terms( 'nav_menu', [ 'hide_empty' => true ] );
 
 		$selected_menu = isset( $_REQUEST[ $this->get_menu_field_id() ] ) ? // phpcs:ignore -- nonce.
 			sanitize_text_field( wp_unslash( $_REQUEST[ $this->get_menu_field_id() ] ) ) : false; // phpcs:ignore -- nonce.

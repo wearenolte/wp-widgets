@@ -22,11 +22,11 @@ class LeanDownloads extends AbstractWidget {
 		if ( function_exists( 'acf_add_local_field_group' ) ) :
 
 			acf_add_local_field_group(
-				array(
+				[
 					'key'                   => 'group_56f9d3400aff4',
 					'title'                 => 'LeanDownloads',
-					'fields'                => array(
-						array(
+					'fields'                => [
+						[
 							'key'               => 'field_56f9d3b907ec5',
 							'label'             => 'Items',
 							'name'              => 'items',
@@ -34,18 +34,18 @@ class LeanDownloads extends AbstractWidget {
 							'instructions'      => '',
 							'required'          => 0,
 							'conditional_logic' => 0,
-							'wrapper'           => array(
+							'wrapper'           => [
 								'width' => '',
 								'class' => '',
 								'id'    => '',
-							),
+							],
 							'collapsed'         => '',
 							'min'               => 1,
 							'max'               => '',
 							'layout'            => 'block',
 							'button_label'      => 'Add Item',
-							'sub_fields'        => array(
-								array(
+							'sub_fields'        => [
+								[
 									'key'               => 'field_56f9d3f007ec6',
 									'label'             => 'Title',
 									'name'              => 'title',
@@ -53,11 +53,11 @@ class LeanDownloads extends AbstractWidget {
 									'instructions'      => '',
 									'required'          => 0,
 									'conditional_logic' => 0,
-									'wrapper'           => array(
+									'wrapper'           => [
 										'width' => '',
 										'class' => '',
 										'id'    => '',
-									),
+									],
 									'default_value'     => '',
 									'placeholder'       => '',
 									'prepend'           => '',
@@ -65,8 +65,8 @@ class LeanDownloads extends AbstractWidget {
 									'maxlength'         => '',
 									'readonly'          => 0,
 									'disabled'          => 0,
-								),
-								array(
+								],
+								[
 									'key'               => 'field_56f9d43007ec7',
 									'label'             => 'Description',
 									'name'              => 'description',
@@ -74,11 +74,11 @@ class LeanDownloads extends AbstractWidget {
 									'instructions'      => '',
 									'required'          => 0,
 									'conditional_logic' => 0,
-									'wrapper'           => array(
+									'wrapper'           => [
 										'width' => '',
 										'class' => '',
 										'id'    => '',
-									),
+									],
 									'default_value'     => '',
 									'placeholder'       => '',
 									'prepend'           => '',
@@ -86,8 +86,8 @@ class LeanDownloads extends AbstractWidget {
 									'maxlength'         => '',
 									'readonly'          => 0,
 									'disabled'          => 0,
-								),
-								array(
+								],
+								[
 									'key'               => 'field_56f9d43607ec8',
 									'label'             => 'Button Text',
 									'name'              => 'button_text',
@@ -95,11 +95,11 @@ class LeanDownloads extends AbstractWidget {
 									'instructions'      => '',
 									'required'          => 0,
 									'conditional_logic' => 0,
-									'wrapper'           => array(
+									'wrapper'           => [
 										'width' => '',
 										'class' => '',
 										'id'    => '',
-									),
+									],
 									'default_value'     => '',
 									'placeholder'       => '',
 									'prepend'           => '',
@@ -107,8 +107,8 @@ class LeanDownloads extends AbstractWidget {
 									'maxlength'         => '',
 									'readonly'          => 0,
 									'disabled'          => 0,
-								),
-								array(
+								],
+								[
 									'key'               => 'field_56f9d44d07ec9',
 									'label'             => 'File',
 									'name'              => 'file',
@@ -116,29 +116,29 @@ class LeanDownloads extends AbstractWidget {
 									'instructions'      => '',
 									'required'          => 0,
 									'conditional_logic' => 0,
-									'wrapper'           => array(
+									'wrapper'           => [
 										'width' => '',
 										'class' => '',
 										'id'    => '',
-									),
+									],
 									'return_format'     => 'array',
 									'library'           => 'all',
 									'min_size'          => '',
 									'max_size'          => '',
 									'mime_types'        => '',
-								),
-							),
-						),
-					),
-					'location'              => array(
-						array(
-							array(
+								],
+							],
+						],
+					],
+					'location'              => [
+						[
+							[
 								'param'    => 'widget',
 								'operator' => '==',
 								'value'    => 'lean-downloads',
-							),
-						),
-					),
+							],
+						],
+					],
 					'menu_order'            => 0,
 					'position'              => 'normal',
 					'style'                 => 'default',
@@ -147,7 +147,7 @@ class LeanDownloads extends AbstractWidget {
 					'hide_on_screen'        => '',
 					'active'                => 1,
 					'description'           => '',
-				)
+				]
 			);
 
 		endif;
