@@ -13,27 +13,31 @@ abstract class AbstractWidget extends \WP_Widget {
 	 *
 	 * @var bool|string
 	 */
-	private $_slug = '';
+	private $slug = '';
 
 	/**
 	 * AbstractWidget constructor.
 	 *
 	 * @param string $title       Widget title
 	 * @param string $description Widget description.
-	 * @param bool   $slug		  Widget slug (use class name if not supplied).
+	 * @param bool   $slug        Widget slug (use class name if not supplied).
 	 */
 	public function __construct( $title, $description, $slug = false ) {
 		if ( $slug ) {
-			$this->_slug = $slug;
+			$this->slug = $slug;
 		} else {
-			$child_class = ( new \ReflectionClass( $this ) )->getShortName();
+			$child_class       = ( new \ReflectionClass( $this ) )->getShortName();
 			$child_class_parts = preg_split( '/(?=[A-Z])/', $child_class );
-			$this->_slug = trim( strtolower( implode( '-', $child_class_parts ) ), '-' );
+			$this->slug        = trim( strtolower( implode( '-', $child_class_parts ) ), '-' );
 		}
 
-		parent::__construct( $this->_slug, $title, [
-			'description' => $description,
-		]);
+		parent::__construct(
+			$this->slug,
+			$title,
+			[
+				'description' => $description,
+			]
+		);
 	}
 
 	/**
@@ -42,7 +46,7 @@ abstract class AbstractWidget extends \WP_Widget {
 	 * @return string
 	 */
 	public function get_slug() {
-		return $this->_slug;
+		return $this->slug;
 	}
 
 	/**
@@ -72,7 +76,7 @@ abstract class AbstractWidget extends \WP_Widget {
 	public function widget( $args, $instance ) {
 		?>
 
-		<h3><?php echo esc_html( $instance['title'] ? $instance['title'] : '' ) ?></h3>
+		<h3><?php echo esc_html( $instance['title'] ? $instance['title'] : '' ); ?></h3>
 
 		<pre>This is a back-end widget only. Access the data via the API.</pre>
 
@@ -94,8 +98,8 @@ abstract class AbstractWidget extends \WP_Widget {
 				Title:
 			</label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
-				   name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text"
-				   value="<?php echo esc_attr( $title ); ?>">
+				name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text"
+				value="<?php echo esc_attr( $title ); ?>">
 		</p>
 		<?php
 	}
@@ -111,8 +115,8 @@ abstract class AbstractWidget extends \WP_Widget {
 	 * @return array Updated safe values to be saved.
 	 */
 	public function update( $new_instance, $old_instance ) {
-		$instance = [];
-		$instance['title'] = empty( $new_instance['title'] ) ? '' : strip_tags( $new_instance['title'] );
+		$instance          = [];
+		$instance['title'] = empty( $new_instance['title'] ) ? '' : wp_strip_all_tags( $new_instance['title'] );
 		return $instance;
 	}
 }

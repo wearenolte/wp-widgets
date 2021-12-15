@@ -33,16 +33,16 @@ class LeanMenu extends AbstractWidget {
 
 		<p>
 
-			<label for="<?php echo esc_attr( $menu_field_name ) ?>">Menu:</label>
+			<label for="<?php echo esc_attr( $menu_field_name ); ?>">Menu:</label>
 
-			<select id="<?php echo esc_attr( $menu_field_name ) ?>"
-					name="<?php echo esc_attr( $menu_field_name ) ?>">
+			<select id="<?php echo esc_attr( $menu_field_name ); ?>"
+					name="<?php echo esc_attr( $menu_field_name ); ?>">
 
 				<?php foreach ( $menus as $menu ) : ?>
 
-					<option value="<?php echo esc_attr( $menu->slug ) ?>"
+					<option value="<?php echo esc_attr( $menu->slug ); ?>"
 						<?php selected( $selected_menu, $menu->slug ); ?> >
-						<?php echo esc_html( $menu->name ) ?>
+						<?php echo esc_html( $menu->name ); ?>
 					</option>
 
 				<?php endforeach ?>
@@ -64,8 +64,8 @@ class LeanMenu extends AbstractWidget {
 	public function update( $new_instance, $old_instance ) {
 		$menus = get_terms( 'nav_menu', array( 'hide_empty' => true ) );
 
-		$selected_menu = isset( $_REQUEST[ $this->get_menu_field_id() ] ) ?
-			sanitize_text_field( wp_unslash( $_REQUEST[ $this->get_menu_field_id() ] ) ) : false;
+		$selected_menu = isset( $_REQUEST[ $this->get_menu_field_id() ] ) ? // phpcs:ignore -- nonce.
+			sanitize_text_field( wp_unslash( $_REQUEST[ $this->get_menu_field_id() ] ) ) : false; // phpcs:ignore -- nonce.
 
 		foreach ( $menus as $menu ) {
 			if ( $selected_menu === $menu->slug ) {
@@ -97,7 +97,7 @@ class LeanMenu extends AbstractWidget {
 			if ( ! $menu_item->menu_item_parent ) {
 				$data['items'][] = [
 					'title' => $menu_item->title,
-					'link' => str_replace( site_url(), '', $menu_item->url ),
+					'link'  => str_replace( site_url(), '', $menu_item->url ),
 					'items' => self::get_sub_menu_items( $menu_items, $menu_item->ID ),
 				];
 			}
@@ -120,7 +120,7 @@ class LeanMenu extends AbstractWidget {
 			if ( intval( $parent_id ) === intval( $menu_item->menu_item_parent ) ) {
 				$items[] = [
 					'title' => $menu_item->title,
-					'link' => str_replace( site_url(), '', $menu_item->url ),
+					'link'  => str_replace( site_url(), '', $menu_item->url ),
 					'items' => self::get_sub_menu_items( $menu_items, $menu_item->ID ),
 				];
 			}
