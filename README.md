@@ -62,11 +62,13 @@ All custom widget objects must extend the ```\Lean\Widgets\Models\AbstractWidget
 You can register widget areas using the usual WordPress function:
 
 ```php
-register_sidebar( array(
-    'id' => 'my-sidebar',
-    'name' => 'Name',
-    'description' => 'My new sidebar',
-) );
+register_sidebar(
+    [
+        'id' => 'my-sidebar',
+        'name' => 'Name',
+        'description' => 'My new sidebar',
+    ]
+);
 ```
 
 ### Creating Custom Widgets

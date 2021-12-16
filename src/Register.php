@@ -11,24 +11,27 @@ class Register {
 	 *
 	 * @var array
 	 */
-	private static $_widgets = [];
+	private static $widgets = [];
 
 	/**
 	 * Init. Takes $widgets_to_register args in the following format:
 	 * [
-	 * 	 'lean' => [ 'LeanPreview', 'LeanMenu' ],
+	 *   'lean' => [ 'LeanPreview', 'LeanMenu' ],
 	 *   'custom' => [ 'MyNamespace\MyWidget' ],
 	 * ]
 	 *
 	 * @param array $widgets_to_register Set of widgets to register for your project.
 	 */
 	public static function init( $widgets_to_register = [] ) {
-		$widgets_to_register = wp_parse_args( $widgets_to_register, [
-			'lean' => [],
-			'custom' => [],
-		] );
+		$widgets_to_register = wp_parse_args(
+			$widgets_to_register,
+			[
+				'lean'   => [],
+				'custom' => [],
+			]
+		);
 
-		self::$_widgets = $widgets_to_register;
+		self::$widgets = $widgets_to_register;
 
 		add_action( 'widgets_init', [ __CLASS__, 'unregister_all' ], 11 );
 
@@ -50,11 +53,11 @@ class Register {
 	 * Register required widgets.
 	 */
 	public static function register_widgets() {
-		foreach ( self::$_widgets['lean'] as $widget ) {
+		foreach ( self::$widgets['lean'] as $widget ) {
 			self::register_widget( __NAMESPACE__ . '\\Collection\\' . $widget );
 		}
 
-		foreach ( self::$_widgets['custom'] as $widget ) {
+		foreach ( self::$widgets['custom'] as $widget ) {
 			self::register_widget( $widget );
 		}
 	}

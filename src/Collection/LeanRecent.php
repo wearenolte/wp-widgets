@@ -34,21 +34,21 @@ class LeanRecent extends AbstractWidget {
 			: 0;
 
 		$field_post_type = $this->get_field_id( 'post_type' );
-		$field_number = $this->get_field_id( 'number' );
+		$field_number    = $this->get_field_id( 'number' );
 		?>
 
 		<p>
 
-			<label for="<?php echo esc_attr( $field_post_type ) ?>">Post Type:</label>
+			<label for="<?php echo esc_attr( $field_post_type ); ?>">Post Type:</label>
 
-			<select id="<?php echo esc_attr( $field_post_type ) ?>"
-					name="<?php echo esc_attr( $field_post_type ) ?>">
+			<select id="<?php echo esc_attr( $field_post_type ); ?>"
+					name="<?php echo esc_attr( $field_post_type ); ?>">
 
 				<?php foreach ( $post_types as $post_type ) : ?>
 
-					<option value="<?php echo esc_attr( $post_type ) ?>"
+					<option value="<?php echo esc_attr( $post_type ); ?>"
 						<?php selected( $selected, $post_type ); ?> >
-						<?php echo esc_html( $post_type ) ?>
+						<?php echo esc_html( $post_type ); ?>
 					</option>
 
 				<?php endforeach ?>
@@ -59,11 +59,11 @@ class LeanRecent extends AbstractWidget {
 
 		<p>
 
-			<label for="<?php echo esc_attr( $field_number ) ?>">Number of posts to display:</label>
+			<label for="<?php echo esc_attr( $field_number ); ?>">Number of posts to display:</label>
 
-			<input type="number" id="<?php echo esc_attr( $field_number ) ?>"
-					name="<?php echo esc_attr( $field_number ) ?>"
-					value="<?php echo esc_attr( $number ) ?>">
+			<input type="number" id="<?php echo esc_attr( $field_number ); ?>"
+					name="<?php echo esc_attr( $field_number ); ?>"
+					value="<?php echo esc_attr( $number ); ?>">
 
 		</p>
 
@@ -81,16 +81,16 @@ class LeanRecent extends AbstractWidget {
 
 		$post_types = get_post_types();
 
-		$selected = isset( $_REQUEST[ $this->get_field_id( 'post_type' ) ] )
-			? sanitize_text_field( wp_unslash( $_REQUEST[ $this->get_field_id( 'post_type' ) ] ) )
+		$selected = isset( $_REQUEST[ $this->get_field_id( 'post_type' ) ] ) // phpcs:ignore -- nonce.
+			? sanitize_text_field( wp_unslash( $_REQUEST[ $this->get_field_id( 'post_type' ) ] ) ) // phpcs:ignore -- nonce.
 			: false;
 
 		if ( in_array( $selected, $post_types, true ) ) {
 			$new_instance['post_type'] = $selected;
 		}
 
-		$number = isset( $_REQUEST[ $this->get_field_id( 'number' ) ] )
-			? absint( $_REQUEST[ $this->get_field_id( 'number' ) ] )
+		$number = isset( $_REQUEST[ $this->get_field_id( 'number' ) ] ) // phpcs:ignore -- nonce.
+			? absint( $_REQUEST[ $this->get_field_id( 'number' ) ] ) // phpcs:ignore -- nonce.
 			: false;
 
 		$new_instance['number'] = $number;
@@ -109,7 +109,7 @@ class LeanRecent extends AbstractWidget {
 		$settings = $this->get_settings()[ $this->number ];
 
 		$args = [
-			'post_type' => $settings['post_type'],
+			'post_type'      => $settings['post_type'],
 			'posts_per_page' => $settings['number'],
 		];
 
@@ -122,7 +122,7 @@ class LeanRecent extends AbstractWidget {
 		while ( $recent->have_posts() ) {
 			$recent->the_post();
 
-			$post->link = get_permalink();
+			$post->link      = get_permalink();
 			$data['items'][] = $post;
 		}
 
